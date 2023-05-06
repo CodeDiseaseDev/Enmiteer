@@ -1,0 +1,233 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="360" Height="640"
+        x:Class="Enmiteer.MainWindow"
+        xmlns:local="clr-namespace:Enmiteer"
+        ExtendClientAreaToDecorationsHint="True"
+        Background="Transparent"
+        TransparencyLevelHint="AcrylicBlur"
+        CanResize="False"
+        Classes="tool_window"
+        Title="Enmiteer">
+	
+        <Window.Styles>
+                <!-- <Style Selector="Window.tool_window Panel#PART_MinimiseButton"> -->
+                <!--         <Setter Property="IsVisible" Value="False"></Setter> -->
+                <!-- </Style> -->
+                <Style Selector="Window.tool_window Panel#PART_RestoreButton">
+                        <Setter Property="IsVisible" Value="False"></Setter>
+                </Style>
+                
+                <Style Selector="local|ServerIcon Border.ServerIconBorder">
+                        <Setter Property="Background" Value="#2B2D30"/>
+                </Style>
+        </Window.Styles>
+        
+        <Panel>
+                <ExperimentalAcrylicBorder IsHitTestVisible="False">
+                        <ExperimentalAcrylicBorder.Material>
+                                <ExperimentalAcrylicMaterial
+                                        BackgroundSource="Digger"
+                                        TintColor="Black"
+                                        TintOpacity="0.2"
+                                        MaterialOpacity="0.75" />
+                        </ExperimentalAcrylicBorder.Material>
+                </ExperimentalAcrylicBorder>
+                
+                <Border Name="MainAppViewBorder" Classes="MainAppViewBorder">
+                        <Border.Styles>
+                                <Style Selector="Border.MainAppViewBorder">
+                                        <Setter Property="Opacity" Value="1"/>
+                                        <Setter Property="Transitions">
+                                                <Transitions>
+                                                        <DoubleTransition Property="Opacity" Duration="0:0:0.1"/>
+                                                </Transitions>
+                                        </Setter>
+                                </Style>
+                                
+                        </Border.Styles>
+                        
+                        <Grid
+                                RowDefinitions="30,1*,Auto">
+                                
+                                <Grid
+                                        IsHitTestVisible="False"
+                                        Grid.Row="0">
+                                        <Label
+                                                Content="1:08"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"/>
+                                        
+                                        <Grid
+                                                Margin="5"
+                                                VerticalAlignment="Center"
+                                                ColumnDefinitions="Auto,1*,Auto">
+                                        
+                                                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                                        <local:iOSCellularBars Margin="8,0,0,0"/>
+                                                        <Label Content="enimteer 3G" Margin="4,0,0,0" Padding="0"/>
+                                                </StackPanel>
+                                                
+                                                <!-- <Label Grid.Column="2" Content="Enmiteer" Margin="0,0,0,0"/> -->
+                                        </Grid>
+                                </Grid>
+                                
+                                <Grid
+                                        Background="#1E1F21"
+                                        Grid.Row="1"
+                                        ColumnDefinitions="66,*"
+                                        Name="MainBackground">
+                                        
+                                        <Grid.Styles>
+                                                <Style Selector="Grid#MainBackground">
+                                                        <Setter Property="Transitions">
+                                                                <Transitions>
+                                                                        <BrushTransition Property="Background" Duration="0:0:0.1"/>
+                                                                </Transitions>
+                                                        </Setter>
+                                                </Style>
+                                        </Grid.Styles>
+                                        
+                                        
+                                        
+                                        <Border
+                                                Padding="0,10,0,0"
+                                                Grid.Column="0">
+                                                
+                                                <ScrollViewer>
+                                                        <StackPanel
+                                                                HorizontalAlignment="Center"
+                                                                Spacing="10">
+                                                                
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                                <local:ServerIcon/>
+                                                        </StackPanel>
+                                                </ScrollViewer>
+                                        </Border>
+                                        
+                                        <Border
+                                                Padding="0,10,0,0"
+                                                Grid.Column="1">
+                                                
+                                                <Grid
+                                                        Name="ChannelListMessageListGrid"
+                                                        ColumnDefinitions="1*, 50">
+                                                        
+                                                        <Border
+                                                                Grid.Column="0"
+                                                                CornerRadius="8,8,0,0"
+                                                                Background="#2B2D30"
+                                                                Name="ChannelList">
+                                                                
+                                                                <Grid
+                                                                        RowDefinitions="Auto,1*">
+                                                                        
+                                                                        <Border
+                                                                                Padding="70"
+                                                                                Grid.Row="0"
+                                                                                CornerRadius="8,8,0,0"
+                                                                                Background="black">
+                                                                                
+                                                                        </Border>
+                                                                        
+                                                                        <StackPanel Grid.Row="1" Margin="10">
+                                                                                <local:Channel/>
+                                                                                <local:Channel/>
+                                                                                <local:Channel/>
+                                                                                <local:Channel/>
+                                                                                <Button Content="load url from clipboard" Click="LoadThemeTest"/>
+                                                                                <Button Content="light/dark theme" Click="Button_OnClick"/>
+                                                                        </StackPanel>
+                                                                </Grid>
+                                                                
+                                                        </Border>
+                                                        
+                                                        <Border
+                                                                CornerRadius="8,0,0,0"
+                                                                Margin="10,0,0,0"
+                                                                Grid.Column="1"
+                                                                Background="#2B2D30"
+                                                                Name="MessageList">
+                                                                
+                                                                <Grid
+                                                                        RowDefinitions="Auto,1*">
+                                                                        
+                                                                        <Border
+                                                                                Background="#99000000" Height="50"
+                                                                                CornerRadius="8,0,0,0">
+                                                                                
+                                                                                <Grid
+                                                                                        ColumnDefinitions="Auto,1*,Auto">
+                                                                                        
+                                                                                        <!-- ≡  -->
+                                                                                        <TextBlock
+                                                                                                Text="≡" FontSize="30"
+                                                                                                VerticalAlignment="Center"
+                                                                                                Margin="13,-4,0,0"
+                                                                                                PointerPressed="MessagesAreaBurgerButton"
+                                                                                        />
+                                                                                </Grid>
+                                                                        </Border>
+                                                                </Grid>
+                                                        </Border>
+                                                </Grid>
+                                        </Border>
+                                </Grid>
+                                
+                                <Border
+                                        Background="#111213"
+                                        BorderBrush="#2E2F33"
+                                        BorderThickness="0,1,0,0"
+                                        Padding="0,10,0,0"
+                                        Grid.Row="2">
+                                        
+                                        <Grid
+                                                RowDefinitions="Auto, Auto">
+                                                
+                                                <Grid
+                                                        Grid.Row="0"
+                                                        ColumnDefinitions="1*,1*,1*,1*,1*">
+                                                
+                                                        <Border Grid.Column="0" Background="#242529" Width="30" Height="30" CornerRadius="15"/>
+                                                        <Border Grid.Column="1" Background="#242529" Width="30" Height="30" CornerRadius="15"/>
+                                                        <Border Grid.Column="2" Background="#242529" Width="30" Height="30" CornerRadius="15"/>
+                                                        <Border Grid.Column="3" Background="#242529" Width="30" Height="30" CornerRadius="15"/>
+                                                        <Border Grid.Column="4" Background="#242529" Width="30" Height="30" CornerRadius="15"/>
+                                                </Grid>
+                                                
+                                                <Border
+                                                        Margin="0,20,0,10"
+                                                        Grid.Row="1"
+                                                        Background="White"
+                                                        Height="4" Width="150"
+                                                        CornerRadius="2"
+                                                />
+                                        </Grid>
+                                        
+                                </Border>
+                        </Grid>
+                </Border>
+                
+        </Panel>
+        
+</Window>

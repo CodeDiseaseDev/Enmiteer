@@ -1,0 +1,33 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Width="45" Height="45"
+             x:Class="Enmiteer.ServerIcon">
+    
+    <Border
+        Classes="ServerIconBorder"
+        Name="border">
+        
+        <Border.Styles>
+            <Style Selector="Border.ServerIconBorder">
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="Transitions">
+                    <Transitions>
+                        <CornerRadiusTransition Property="CornerRadius" Duration="0:0:0.1"/>
+                        <BrushTransition Property="Background" Duration="0:0:0.1"/>
+                    </Transitions>
+                </Setter>
+            </Style>
+            <Style Selector="Border.ServerIconBorder:pointerover">
+                <Setter Property="CornerRadius" Value="13"/>
+                <!-- <Setter Property="Background" Value="#3B3D40"/> -->
+            </Style>
+        </Border.Styles>
+        
+        <TextBlock Text="ss" FontSize="17"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+    </Border>
+    
+</UserControl>

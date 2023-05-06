@@ -1,0 +1,30 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Height="40"
+             x:Class="Enmiteer.Channel">
+    
+    <Border>
+        
+        
+        <StackPanel
+            Orientation="Horizontal"
+            Spacing="10" Margin="10,6,10,6">
+            
+            <StackPanel.Styles>
+                <Style Selector="TextBlock.fades">
+                    <Setter Property="Transitions">
+                        <Transitions>
+                            <BrushTransition Property="Foreground" Duration="0:0:0.1"/>
+                        </Transitions>
+                    </Setter>
+                </Style>
+            </StackPanel.Styles>
+            
+            <TextBlock x:Name="hashTag" Classes="fades" Text="#" FontSize="24" VerticalAlignment="Center" Foreground="#959AA3"/>
+            <TextBlock x:Name="channelName" Text="general" Classes="fades" FontSize="16" VerticalAlignment="Center" Foreground="#959AA3"/>
+        </StackPanel>
+    </Border>
+    
+</UserControl>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Enmiteer/Channel.axaml" value="Enmiteer/Enmiteer.csproj" />
+        <entry key="Enmiteer/MainWindow.axaml" value="Enmiteer/Enmiteer.csproj" />
+        <entry key="Enmiteer/ServerIcon.axaml" value="Enmiteer/Enmiteer.csproj" />
+        <entry key="Enmiteer/iOSCellularBars.axaml" value="Enmiteer/Enmiteer.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
